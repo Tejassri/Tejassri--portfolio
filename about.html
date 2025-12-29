@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tejassri Mahalingam - Student Portfolio</title>
+    <style>
+        /* Reset and General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #343a40;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #007bff;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        section:nth-child(even) {
+            background-color: #f1f3f5;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #2575fc;
+        }
+
+        /* About Section */
+        #about .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #2575fc;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 1.1rem;
+        }
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .skill-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        .skill-item:hover {
+            transform: translateY(-10px);
+        }
+        .skill-item h3 {
+            margin-bottom: 15px;
+            color: #2575fc;
+        }
+
+        /* Education Section */
+        .education-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .education-item {
+            margin-bottom: 40px;
+            padding-left: 30px;
+            border-left: 3px solid #2575fc;
+            position: relative;
+        }
+        .education-item::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: #2575fc;
+            border-radius: 50%;
+            position: absolute;
+            left: -9px;
+            top: 0;
+        }
+        .education-item h3 {
+            color: #2575fc;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .project-info {
+            padding: 20px;
+        }
+        .project-info h3 {
+            margin-bottom: 10px;
+            color: #2575fc;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+        }
+        .contact-info {
+            margin: 30px 0;
+            font-size: 1.2rem;
+        }
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8rem;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Tejassri Mahalingam</h1>
+            <p>Aspiring Student | Passionate Learner | Future Innovator</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <!-- Placeholder for profile image -->
+                <img src="https://via.placeholder.com/250" alt="Tejassri Mahalingam" class="profile-img">
+                <div class="about-text">
+                    <p>Hello! I'm Tejassri Mahalingam, a dedicated and enthusiastic student with a strong passion for learning and exploring new technologies.</p>
+                    <p>I am currently pursuing my studies with a focus on computer science and innovation. I enjoy solving problems, working on creative projects, and continuously improving my skills.</p>
+                    <p>In my free time, I love reading, coding personal projects, and participating in educational activities that broaden my knowledge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>Programming Languages</h3>
+                    <p>Python, Java, C++, HTML, CSS, JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Tools & Technologies</h3>
+                    <p>Git, VS Code, Figma, Microsoft Office</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Soft Skills</h3>
+                    <p>Teamwork, Problem Solving, Communication, Time Management</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Other Interests</h3>
+                    <p>Data Structures, Web Development, Machine Learning Basics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <h3>High School</h3>
+                    <p><strong>SV matriculation hr sec school</strong> 
+                    <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id tenetur optio quo! Nesciunt odit odio corrupti laudantium quasi ut dolor esse ipsa? Sint velit voluptates illum quod molestias quae consequatur!</p>
+                </div>
+                <div class="education-item">
+                    <h3>BIT institute</h3>
+                    <p><strong>  B-Tech AIDs</strong> | Institution Name | Ongoing</p>
+                    <p>Pursuing higher education with focus on technology and innovation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">Project Image Placeholder</div>
+                    <div class="project-info">
+                        <h3>Personal Website</h3>
+                        <p>A responsive portfolio website built using HTML and CSS to showcase skills and projects.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Project Image Placeholder</div>
+                    <div class="project-info">
+                        <h3>Simple Calculator</h3>
+                        <p>A web-based calculator application developed using HTML, CSS, and JavaScript.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Project Image Placeholder</div>
+                    <div class="project-info">
+                        <h3>School Project</h3>
+                        <p>Description of any academic or personal project you have completed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:tejassri@example.com">tejassri@example.com</a></p>
+                <p>Phone: +91-XXXXXXXXXX</p>
+                <p>Location: Your City, Country</p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tejassri Mahalingam. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
